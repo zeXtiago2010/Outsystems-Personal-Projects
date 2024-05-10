@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Off Canvas Menu</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/assets/fontawesome-free-6.4.0-web/css/all.css">
+
+    <!-- Font Warcraft -->
+    <link href="https://fonts.cdnfonts.com/css/warcraft" rel="stylesheet">
+
+    <style>
+        
+        html{
+            scroll-behavior: smooth;
+
+        }
+
+        body{
+            font-family: 'warcraft', sans-serif;
+            margin: 0;
+            background-image: url(/Images/world-of-warcraft-wow-classic-hd-wallpaper-preview.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: rgba(240,195,46,1);
+            font-size: 25px;
+            
+        }
+
+        .MySideNav{
+            transition: 0.5s;
+            overflow: hidden;
+            padding-top: 60px;
+            width: 0; /*Retirar no Final*/
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: fixed;
+            z-index: 1;
+            background-color:rgb(76, 148, 188)
+
+        }
+
+        .MySideNav a{
+            padding: 8px 8px 8px 32px;
+            font-size: 25px;;
+            text-decoration: none;
+            display: block;
+            color: rgba(240,195,46,1)
+
+        }
+
+        .MySideNav a:hover {
+
+            color: #f1f1f1;
+        }
+
+        .MySideNav .MyCloseBtn{
+            position: absolute;
+            top: 0;
+            right:25px;
+            font-size: 40px;
+            margin-left: 50px;
+
+        }
+
+        #myMain {
+            padding: 16px;
+            transition: 0.5;
+            text-align: justify;
+            border-style: double;
+            border: 5px;
+            padding-top: 100px;
+        }
+
+        .MyOpenBtn {
+            font-size: 30px;
+            padding: 16px;
+            cursor: pointer;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(240,195,46,0.8);
+            color: rgb(9, 133, 199);
+            border-radius: 10px;
+            border-style: solid;
+            border-color: rgb(76, 148, 188);
+            
+
+        }
+
+        /* Sections */
+
+        #timeline, #races, #classes, #content, #story {
+            padding: 8px 8px ;
+            background-color: rgba(0, 0, 0, 0.8);
+            height: 50px
+            padding-top: 80px;
+            
+            
+            
+
+        }
+
+        /* Back To Top Button */
+        .MyBackToTop{
+            padding: 16px;
+            font-size: 60px;
+            position:fixed;
+            right: 50%;
+            top: 85%;
+            background-color: rgba(240,195,46,0.8);
+            border-radius: 50%;
+            text-align: center;
+            transition: 2s;
+            transition-timing-function: ease-in;
+            
+
+        }
+
+        .empty1 {
+            height: 100px;
+            background-color: none;
+
+        }
+
+
+        h1{
+            text-align: center;
+            color: rgba(240,195,46,1);
+            font-size: 5vw;
+
+        }
+
+        h3  {
+            text-align: center;
+            color: rgb(9, 133, 199);
+            font-size: 35px;
+
+        }
+
+        h4 {
+            font-size: 35px;
+            text-align: justify;
+            color: rgb(227, 30, 36)
+            
+
+        }
+
+    </style>
+                
+    <script>
+
+        //Cod de Fecho de Navegação    
+        function MyCloseNav() {
+
+            document.getElementById('MySideNav').style.width = '0';
+            document.getElementById('myMain').style.marginLeft = '0';
+            document.body.style.backgroundColor = 'rgb(255,255,255)';
+
+        }
+
+        function MyOpenNav() {
+
+            document.getElementById('MySideNav').style.width = '250px';
+            document.getElementById('myMain').style.marginLeft = '250px';º
+            document.body.style.backgroundColor = 'rgba(0,0,0,0.4)';
+        }
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <div id="MySideNav" class="MySideNav">
+
+        <a class="MyCloseBtn" onclick="MyCloseNav()">&times;</a>
+
+        <a href="#timeline" onclick="MyCloseNav()">Warcraft Time Line</a>
+        <a href="#races" onclick="MyCloseNav()">Races</a>
+        <a href="#classes" onclick="MyCloseNav()">Classes</a>
+        <a href="#content" onclick="MyCloseNav()">Content Update Notes</a>
+        <a href="#story" onclick="MyCloseNav()" >Story and Media</a>
+
+    </div>
+
+    <span class="MyOpenBtn" onclick="MyOpenNav()">&equiv; Open</span>
+
+    <a href="#" class="MyBackToTop"><i class="fa-solid fa-arrow-up" style="color: rgb(9, 133, 199);"></i></a>
+
+    <div id="myMain">
+        
+
+        <div id="timeline">
+            <h1>Warcraft Timeline</h1>
+
+            <h3>Warcraft: Orcs & Humans</h3> 
+
+            Lançado em novembro de 1994 | Jogo para PC/Mac
+            Por muitas eras, o titã decaído Sargeras tramou para aniquilar toda a vida de Azeroth. Para tanto, Sargeras possuiu o feiticeiro humano Medivh e o forçou a entrar em contato com Gul'dan, um bruxo orc do mundo de Draenor. Lá, os servos demoníacos da Legião Ardente trabalhavam para corromper os orcs, outrora criaturas pacíficas, e transformá-los em um exército sanguinário conhecido como Horda. Este exército amaldiçoado invadiu Azeroth pelo Portal Negro — uma passagem interdimensional criada por Medivh e Gul'dan — e enfrentaram os exércitos humanos em Ventobravo. Ajudados pela meio-orc Garona, campeões humanos como Anduin Lothar lutaram bravamente para proteger o reino. Porém, no fim, a poderosa Horda despedaçou as defesas de Ventobravo. Em meio a queda trágica da cidade, Garona traiu seus aliados e assassinou o Rei Llane Wrynn, selando a derrota da nação.
+           
+            <h3>Warcraft II: Tides of Darkness</h3>
+
+            Lançado em dezembro de 1995 | Jogo para PC / Mac
+            A nação humana de Ventobravo havia caído diante da Horda. O Campeão Cavaleiro Anduin Lothar reuniu os restos espalhados do exército humano e liderou os refugiados numa marcha para o norte, atravessando o Grande Mar em direção ao reino de Lordaeron. Ao conquistar a ajuda de outras nações — humanos, gnomos, elfos e anões — Lothar ajudou a formar uma grande Aliança para enfrentar os orcs e seu novo líder, o impiedoso Orgrim Martelo da Perdição. A Horda, aparentemente invencível, continuou em sua trilha de devastação, reforçando o exército crescente com trolls selvagens e ogros brutos. Mas, quando estavam prestes a vencer, Gul'dan partiu com os seguidores, abandonando os aliados em busca de artefatos poderosos, forçando a Horda enfraquecida a recuar. Martelo da Perdição conseguiu inspirar os orcs por um momento, ao matar Lothar em uma batalha terrível, mas a morte do herói não abateu a determinação da Aliança. Turalyon, o leal tenente de Lothar, assumiu rapidamente a liderança dos defensores de Azeroth e finalmente derrotou a Horda.
+           
+            <h3>Warcraft II: Beyond the Dark Portal</h3>
+
+            Lançado em abril de 1996 | Conjunto de expansão
+            Após a destruição do Portal Negro de Azeroth pela Aliança, o xamã orc Ner'zhul assumiu o comando do que restava da Horda em Draenor. De lá, ele planejou criar portais para outros mundos intocados e invadi-los. Para poder realizar os rituais que possibilitariam a conquista interdimensional, Ner'zhul enviou tropas órquicas através do Portal Negro intacto de seu mundo em busca de relíquias em Azeroth. Preocupados com os planos da Horda, os heróis da Aliança invadiram Draenor para acabar com a ameaça dos orcs para sempre. Sabendo que seria certamente derrotado por seus inimigos, Ner'zhul conseguiu abrir vários portais para outros mundos. As imensas tensões mágicas resultantes acabaram despedaçando Draenor, prendendo muitos dos maiores heróis de Azeroth em Terralém, como ficaram conhecidos os restos destroçados do planeta.
+            
+            <h3>Warcraft III: Reign of Chaos</h3>
+
+            Lançado em julho de 2002 | Jogo para PC / Mac
+            Após muitos anos definhando em cativeiro, os orcs que permaneceram em Azeroth foram libertados por um ex-escravo chamado Thrall. O jovem xamã e sua Horda reformulada fugiram para o continente de Kalimdor para escapar da invasão da Legião Ardente, um exército demoníaco que buscava a destruição de toda Azeroth. Para enfraquecer as defesas do mundo, a Legião liberou uma nova e horrenda arma: o Flagelo dos mortos-vivos. O Príncipe Arthas Menethil de Lordaeron lutou bravamente para proteger suas terras dos aterrorizantes inimigos, mas o medo e o desespero o levaram a unir-se ao líder misterioso do Flagelo, o Lich Rei. Em Kalimdor, a Horda de Thrall deixou de lado o ódio antigo e se uniu a outras raças para combater o ataque maciço da Legião, comandada pelo lorde demoníaco Arquimonde. Com muita dificuldade, a união improvável de humanos, elfos noturnos e orcs derrotou seus inimigos no topo do sagrado Monte Hyjal.
+            
+            <h3>Warcraft III: The Frozen Throne</h3>
+
+            Lançado em julho de 2003 | PC / Mac Expansion Set
+            Enquanto os exércitos de humanos, orcs e seus aliados se recuperavam da batalha contra a Legião Ardente, Arthas Menethil—agora um Cavaleiro da Morte—massacrava os habitantes dos Reinos do Leste de Azeroth, em nome do Flagelo. Mas novas forças surgiram, ameaçando destruir Arthas e seus lacaios: a banshee Sylvana Correventos se rebelou, criando uma facção separatista de mortos-vivos que ficou conhecida como os Renegados; e Illidan Tempesfúria, um elfo noturno corrompido pelos demônios, enviou seus exércitos ao continente gelado de Nortúndria para atacar o Lich Rei. Arthas correu para defender seu mestre e derrotou Illidan, que fugiu para Terralém humilhado. Finalmente próximo ao centro do poder do Flagelo, Arthas fez o impensável e voluntariamente fundiu sua alma à do Lich Rei.
+            
+            <h3>World of Warcraft</h3>
+
+            Lançado em novembro de 2004 | Jogo para PC / Mac
+            Determinada a estabelecer-se na árida região de Durotar, a nova Horda de Thrall convidou os Renegados a se juntarem às forças de orcs, taurens e trolls. Enquanto isso, anões, gnomos e os ancestrais elfos noturnos juraram lealdade a uma Aliança revigorada, liderada pelo reino humano de Ventobravo. Após o misterioso desaparecimento do Rei de Ventobravo, Varian Wrynn, o Grão-lorde Bolvar Fordragon ocupou o cargo de lorde-regente, porém seu período de serviço foi deturpado por manipulações e controle mental da dragonesa negra Onyxia, que reinava disfarçada de aristocrata humana. Enquanto heróis investigavam as manipulações de Onyxia, antigos inimigos ressurgiram em todo o mundo para ameaçar tanto a Horda quanto a Aliança.     
+       
+        </div><br>
+
+    <!-- Div de Separação -->
+    <div class="empty1"></div>
+
+        <div id="races">
+            <h1>Races</h1>
+
+            <h3>Habitantes de Azeroth</h3>
+
+            Azeroth abriga uma série de raças, algumas nativas, outras provenientes de outros mundos. Seja um defensor implacável da Aliança ou um guardião feroz da Horda, ao escolher a sua raça você define por qual lado lutará nesta guerra interminável. A quem pertence a sua lealdade?
+
+            <h3>Alliance</h3>
+
+            A força da Aliança vem da tradição. São defensores irredutíveis da justiça e do dever, que protegem o reino de Azeroth de todo e qualquer agressor, inclusive a selvagem Horda.
+
+            <h4>Humano</h4>
+
+            O reino humano de Ventobravo é a espinha dorsal da Aliança. A disposição de Ventobravo para cooperar com outros povos e encontrar soluções diplomáticas é uma de suas maiores forças. Os habitantes se aferram aos princípios de honra e justiça que norteiam o reino enquanto defendem seus povoamentos e a Aliança de agressores.
+
+            <h4>Anão</h4>
+
+            Os bravos e audazes anões são uma raça ancestral que descende dos terranos — seres de pedra viva nascidos da forja titânica quando o mundo era jovem. Oriundos da portentosa cidade de Altaforja, entranhada nos picos nevados de Khaz Modan, os anões são corajosos defensores da Aliança.
+
+            <h4>Elfo Noturno</h4>
+
+            A ancestral e reclusa raça noctiélfica — também conhecida como os kaldorei — desempenhou um papel fundamental na definição do destino de Azeroth. Lutando pela Aliança, muitos dos elfos noturnos de hoje ainda se lembram da Guerra dos Antigos, ocorrida mais de dez mil anos atrás, quando eles rechaçaram a primeira invasão da Legião Ardente a Azeroth. Os ferozes elfos noturnos lutarão com unhas e dentes para garantir que suas terras sagradas jamais voltem a ser maculadas pelo mal.
+
+            <h4>Gnomo</h4>
+
+            Os inteligentes, ousados e não raro excêntricos gnomos representam um paradoxo único entre as raças civilizadas de Azeroth. Seu notável otimismo diante da calamidade simboliza o inabalável espírito gnômico, e sua criatividade e engenhosidade sem fim só se comparam ao seu comprometimento para com a causa da Aliança.
+
+        </div><br>
+
+    <!-- Div de Separação -->
+    <div class="empty1"></div>
+
+        <div id="classes">
+            <h1>Classes</h1>
+
+
+
+        </div><br>
+
+ <!-- Div de Separação -->
+    <div class="empty1"></div>
+
+        <div id="content">
+            <h1>Content</h1>
+
+        </div><br>
+
+     <!-- Div de Separação -->
+    <div class="empty1"></div>
+
+        <div id="story">
+            <h1>Story</h1>
+
+
+        </div><br>
+
+     <!-- Div de Separação -->
+    <div class="empty1"></div>
+
+
+    </div>
+
+</body>
+</html>

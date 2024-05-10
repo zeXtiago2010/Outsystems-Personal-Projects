@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Candidatura</title>
+
+    <!--Fonts Google!-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@100&family=Poppins:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+    
+    <!--Icon do Formulário-->
+    <link rel="icon" type="image/x-icon" href="/Images/outsystems-logo.jpg">
+
+    <!--CSS Corner!-->
+    <style>
+
+
+        h1{
+            color:rgb(204,34,0);
+
+        }
+
+        h2{
+            color:rgb(204,34,0)
+
+        }
+
+        h3{
+            color: rgb(204,34,0);
+
+        }
+        body{
+            font-family: 'Bebas Neue', cursive;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+            background-color: rgb(255, 255, 255);
+        }
+
+        textarea{
+            font-family: 'Bebas Neue', cursive;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+
+            width: 50px;
+        }
+
+        img{
+
+            width: 200px;
+
+        }
+
+        .id{
+            border: 20px rgb(204,34,0)
+
+        }
+    </style>
+
+</head>
+    
+<body>
+    <h1>Candidatura a Outsystems Ninja</h1>
+
+    <!--Imagem Ilustrativa!-->
+    <a><img src="Images/nerdninja.png"></a><a><img src="/Images/outsystems-logo.jpg" alt=""></a>
+
+    <!--Corpo do Form!-->
+    <form action="https://formsubmit.co/zenetherlands@gmail.com" method="POST">
+        
+        
+        <h2>Dados do Pré-Ninja</h2>
+
+        <fieldset id="id">
+            <legend>Quem é?</legend>
+            <label for="FNAME">Primeiro Nome:</label><br>
+            <input type="text" id="fname" name="FNAME" placeholder="Primeiro Nome" size="50" maxlength="10" required>*<br>
+            <label for="LNAME">Último Nome:</label><br>
+            <input type="text" id="lname" name="LNAME" placeholder="Último Nome" size="50" maxlength="10" required>*<br>
+            <label for="datan">Data de Nascimento:</label>
+            <input type="date" id="nascimento" name="nascimento" placeholder="Data Nascimento" size="50" required>*<br>
+        </fieldset>
+
+        <h2>Morada e Endereço</h2>
+
+        <fieldset id="casa">
+            <legend>Onde Vive?</legend>
+            <label for="MORADA">Morada Habitacional:</label><br>
+            <input type="text" id="morada" name="MORADA" placeholder="Endereço" size="50" maxlength="100" required>*<br>
+            <label for="CPOSTAL">Código Postal:</label><br>
+            <input type="text" placeholder="XXXX-XXX" pattern="[0-9]{4}-[0-9]{3}" id="cpostal" name="cpostal" required>*<br>
+            <label for="LDADE">Localidade:</label><br>
+            <input type="text" id="localidade" name="LOCALIDADE" placeholder="Localidade de Residência" size="50" maxlength="100" required>*<br>
+        </fieldset>
+        
+        <h2>Quais as tuas armas?</h2>
+        <input type="checkbox" name="myWeapon1" value="html">HTML
+        <input type="checkbox" name="myWeapon2" value="css">CSS
+        <input type="checkbox" name="myWeapon3" value="js">JavaScript
+        <input type="checkbox" name="myWeapon4" value="sql">SQL
+        <input type="checkbox" name="myWeapon5" value="c#">C#
+        <input type="checkbox" name="myWeapon6" value="scrum">SCRUM
+
+        <h2>Qual dirias ser o teu à vontade com cada arma?</h2>
+        <input type="range" value="50" name="1"> HTML
+        <input type="range" value="50" name="2"> CSS
+        <input type="range" value="50" name="3"> JavaScript
+        <input type="range" value="50" name="4"> SQL
+        <input type="range" value="50" name="5"> C#
+        <input type="range" value="50" name="6"> SCRUM
+
+        <h2>Competências Académicas</h2>
+        <input list="estudos">
+        <datalist id="estudos">
+            <option value="Ensino Elementar">9º ano</option>
+            <option value="Ensino Secundário">12º ano</option>
+            <option value="Licenciatura">Licenciatura</option>
+            <option value="Pós-Graduação">Pós-Graduação</option>
+            <option value="Mestrado">Mestrado</option>
+            <option value="Doutoramento">Doutoramento</option>
+        </datalist>
+
+        <!--Área de Estudos do Candidáto-->
+        <h3>Qual a Àrea de Estudos?</h3>
+        <textarea class="areadeestudos" name="estudos" id="estudos" cols="10" rows="10"maxlength="200px" required>*</textarea>
+
+        <!--Motivação do Candidato!-->
+        <h3>Qual é a tua Motivação para ser o próximo Ninja?</h3>
+        <textarea class="motivação" name="motivação" id="motivação" cols="20" rows="20" maxlength="200px" required>*</textarea>
+
+
+        <!--Envio e Conclusão do Form-->
+        <h2>Conclusão!</h2>
+        <button name="submit" type="submit">Manda a Kunai!</button>
+        <button type="reset">Refazer?</button>
+
+    </form>
+</body>
+</html>

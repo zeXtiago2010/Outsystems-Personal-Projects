@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Facebook</title>
+    
+    <!--Fonts Fontawesome!-->
+    <link rel="stylesheet" href="assets/fontawesome-free-6.4.0-web/css/all.css">
+
+    <link rel="icon" type="image/x-icon" href="/Images/facebook-icon-jpg-download-14.jpg">
+
+    <!--Fonts Google!-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+NSW+ACT+Foundation:wght@500&family=Noto+Sans+JP:wght@100&family=Poppins:wght@300&family=Quicksand&display=swap" rel="stylesheet">
+
+    <!--JavaScript Corner!-->
+    <script>
+
+
+
+
+
+    </script>
+
+    <!--CSS Corner!-->
+    <style>
+        /* Fonts do Website */
+        body{
+            font-family: 'Bebas Neue', cursive;
+            font-family: 'Edu NSW ACT Foundation', cursive;
+            font-family: 'Noto Sans JP', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Quicksand', sans-serif;
+           
+          
+            color: rgb(255, 253, 253);
+
+            background-image: url('/Images/facebook-reactions-transparent-18.png');
+            background-attachment: scroll;
+            background-position: center;
+
+        }
+
+        /* Formatação da Calculadora Integral */
+        table, th, td {
+            border-radius: 10% 10% 10% ;
+            border-style: inset;
+            margin-left:auto;
+            margin-right:auto;
+            border: 3px solid rgb(23, 120, 242);background-color: rgb(23, 120, 242)
+            
+        }
+
+        /* Formatação  */
+         table {
+            box-shadow: 5px 5px rgba(0, 0, 0, 0.7);
+            border: 8px solid rgb(255, 253, 253);
+            width: 350px;
+            height: 450px;
+            padding: 10px;
+            border-style: outset;
+        }
+
+
+        th {
+            border: 6px rgb(255, 253, 253);
+            font-size: 30px;
+            border-radius: 20% ;
+            border-style: inset;
+            text-align: right;
+            padding-right: 5px;
+            
+        }
+
+
+        td {
+            border: 5px solid rgb(255, 253, 253);
+            border-radius:10% ;
+        } 
+
+        /* Área dos Simbolos do Double Screen */
+        caption{
+            margin:1px;
+            padding-top: 7px;
+            box-shadow:3px 5px rgba(0, 0, 0, 0.7);
+            border-radius: 50% 50% 10% 10%;
+            border: 5px solid;
+            border-style:outset;
+            color: rgba(0, 0, 0,0.6);
+            background-color: rgb(188, 205, 149, 1);
+            font-size: 22px;
+            text-align: center; 
+        }
+        caption i{
+            margin: 10px 10px 8px;
+        }
+        /* Texto de Apresentação */
+        h1{ 
+            color: rgb(255, 253, 253);
+        }
+
+        /* Visor da Calculadora */
+        .visor {
+            border-style: groove; 
+            width: 60px;
+            height: 80px;
+            font-size: 34px;
+            text-align: right;
+            font-weight: bold;
+            color: rgba(000, 000, 000,0.6);
+
+        }
+
+        .visor-on {
+
+            background-color: rgb(93, 255, 0);
+        }
+        
+        .visor-off {
+            background-color: rgb(188, 205, 149);
+
+        }
+
+
+        /* Botões da Cálculadora */
+        button{
+            margin-left: 4px;
+            margin-right: 4px;
+            box-shadow: 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            text-shadow: 2px 2px 2px rgb(0, 0, 0);
+            border-width: 10px;
+            border-radius: 10% 30% 10% 30%;
+            width: 60px;
+            height: 60px;
+            font-weight: bold;
+            font-size: 34px;
+            color: rgb(23, 120, 242);
+            border-style:inset;
+          
+        /* Funcionalidade de Hover  */
+        }
+        button:hover {
+            color: rgb(255, 253, 253);
+            background-color:rgba(23, 120, 242, 0.5);
+            border-style:outset;
+            cursor: pointer;
+            text-shadow: none;
+        }
+
+        /* Botão de Display on and off */
+        #display{
+                text-align: right;
+                font-weight: bold;
+                cursor: pointer;
+        }
+
+
+        /* Tamanho dos visores do Display */
+        .visor1{
+            font-size: 15px;
+
+        }
+
+        .visor2{
+            font: size 30px;
+
+        }
+
+        .facebookContainer{
+            text-align: center;
+            border: none;
+
+        }
+
+
+        .facebook {
+            animation-name: myanim1;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            animation-duration: 10s;
+            position: relative
+            
+
+        }
+        
+        @keyframes myanim1 {
+            from{
+                
+                transform: rotate(0deg);
+            }
+
+            to{
+                transform: rotate(360deg);
+
+            }
+
+        }
+
+        #subDisplay {
+            font-size: 15px;
+            
+            
+
+        }
+
+        
+    </style>
+
+    <script>
+
+        // let $myString = ''
+
+        // function EraseBack() {
+
+        //     let x;
+
+        //     x = $myString.slice(0,-2);
+
+        //     document.write(x);
+        // }
+
+
+
+         // captura do teclado
+         document.addEventListener('keyup', (event) => {
+
+        // colocar o codigo
+        let $eventKey = event.key;
+        let $eventCode = event.code;
+
+        // alert('Key: ' + $eventKey + ' Code: ' + $eventCode);
+
+        switch ($eventKey) {
+            // case '1':
+            //     mySubDisplay($eventKey);
+            //     break;
+
+         case '1':
+         case '2':
+         case '3':
+         case '4':
+         case '5':
+         case '6':
+         case '7':
+         case '8':
+         case '9':
+         case '0':
+            mySubDisplay($eventKey);
+            break;
+
+
+            
+            case '/':
+            case '+':
+            case '-':
+            case '<':
+            case '>':
+            case '*':
+                mySubDisplay($eventKey);
+            break;
+
+            case 'x':
+            case 'X':
+                mySubDisplay('*');
+            break;
+
+            case 'Delete':
+            case 'c':
+            case 'C':
+                mySubDisplay('C');
+            break;
+
+            case '.':
+            case ',':
+                mySubDisplay('.');
+            break;
+
+            case '=':
+            case 'Enter':
+                getResult('=');
+            break;
+            
+            case 'Backspace':
+                mySubDisplay('B');
+            
+                        
+
+}
+
+});
+
+
+        //Escreve no Display
+        function mySubDisplay(myChar) {
+            let $myDisplay = document.getElementById('subDisplay').innerHTML;
+            
+            if (myChar == 'C') {
+                document.getElementById('subDisplay').innerHTML = '0'; // limpa o subDisplay
+                document.getElementById('mainDisplay').innerHTML = '0'; // limpa o mainDisplay
+            
+            
+
+            } else if (myChar == 'B'){ 
+               
+
+                if ($myDisplay.length==1) {
+                    document.getElementById('subDisplay').innerHTML = '0';
+
+                } else {
+                    document.getElementById('subDisplay').innerHTML = $myDisplay.slice(0,-1);
+
+                }    
+
+            //Caso de calcular =
+            } else if (myChar == '='){
+                document.getElementById('mainDisplay').innerHTML = eval($myDisplay);
+
+            } else if ($myDisplay == '0') {
+                document.getElementById('subDisplay').innerHTML = myChar;
+                
+
+
+            } else  {
+                    document.getElementById('subDisplay').innerHTML += myChar; // acrescenta no subDisplay
+              }
+            
+
+            
+
+
+        }
+
+        function lightDisplay() {
+            let $lightBtn= document.getElementById('display');
+            
+
+            if($lightBtn.classList.contains('fa-toggle-off')) {
+
+                document.getElementById('display').classList.replace('fa-toggle-off','fa-toggle-on');
+                document.getElementById('Display').classList.replace('visor-off','visor-on');
+            } else{
+
+                document.getElementById('display').classList.replace('fa-toggle-on','fa-toggle-off');
+                document.getElementById('Display').classList.replace('visor-on','visor-off');
+            }
+
+        }
+
+
+    </script>    
+
+</head>
+    <!--Título da Calculadora!-->
+    <h1>Calculadora dos Friend Requests</h1>
+<body>
+    <!--Corpo da Calculadora!-->
+    <table>
+        <caption><i class="fa-solid fa-calculator fa-beat"></i>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-solid fa-user-plus"></i>
+            <i class="fa-solid fa-mobile-screen-button fa-bounce">
+            </i><i class="fa-brands fa-facebook-messenger fa-shake"></i></caption>
+        
+            <tr class="display">
+            <th class="facebookContainer" colspan="1"><i class="facebook fa-brands fa-facebook fa-2xl"></i></th>
+            <th colspan="3"><hr><i onclick="lightDisplay()" class="fa-solid fa-toggle-off" id="display"></i></th>
+        </tr> 
+        <tr>
+            <th id="Display" class="visor visor-off" colspan="4">
+                <div id="subDisplay" class="visor1">0</div>
+                <div id="mainDisplay" class="visor2">0</div>
+            </th>
+        </tr>
+        <tr>
+            <td><button><i class="fa-solid fa-chevron-left" onclick="mySubDisplay('(')"></i></button> </td>
+            <td><button><i class="fa-solid fa-chevron-right" onclick="mySubDisplay(')')"></i></button></td>
+            <td><button><i onclick="mySubDisplay('C')" class="fa-solid fa-c"></i></button></td>
+            <td><button><i class="fa-solid fa-delete-left fa-beat" onclick="mySubDisplay('B')"></i></button></td>
+        </tr>
+        <tr>
+            <td><button><i class="fa-solid fa-7" onclick="mySubDisplay('7')"></i></button></td>
+            <td><button><i class="fa-solid fa-8" onclick="mySubDisplay('8')"></i></button></td>
+            <td><button><i class="fa-solid fa-9" onclick="mySubDisplay('9')"></i></button></td>
+            <td><button><i class="fa-solid fa-divide fa-beat" onclick="mySubDisplay('/')"></i></button></td>
+        </tr>
+        <tr>
+            <td><button><i class="fa-solid fa-4" onclick="mySubDisplay('4')"></i></button></td>
+            <td><button><i class="fa-solid fa-5" onclick="mySubDisplay('5')"></i></button></td>
+            <td><button><i class="fa-solid fa-6" onclick="mySubDisplay('6')"></i></button></td>
+            <td><button><i class="fa-solid fa-xmark fa-beat" onclick="mySubDisplay('*')"></i></button></td>
+        </tr>
+        <tr>
+            <td><button><i class="fa-solid fa-1" onclick="mySubDisplay('1')"></i></button></td>
+            <td><button><i class="fa-solid fa-2" onclick="mySubDisplay('2')"></i></button></td>
+            <td><button><i class="fa-solid fa-3" onclick="mySubDisplay('3')"></i></button></td>
+            <td><button><i class="fa-solid fa-minus fa-beat" onclick="mySubDisplay('-')"></i></button></td>
+        </tr>
+        <tr>
+            <td><button><i class="fa-solid fa-circle fa-beat fa-2xs" onclick="mySubDisplay('.')"></i></button></td>
+            <td><button><i class="fa-solid fa-0" onclick="mySubDisplay('0')"></i></button></td>
+            <td><button onclick="mySubDisplay('=')"><i id="resultbtn" class="fa-solid fa-equals fa-beat"></i></button></td>
+            <td><button><i class="fa-solid fa-plus fa-beat" onclick="mySubDisplay('+')"></i></button></td>
+        </tr>
+    </table>
+
+    
+
+</body>
+
+
+</html>
